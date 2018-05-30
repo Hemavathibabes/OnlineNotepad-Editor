@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Text editor</title>
+</head>
+
+<body>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>Tools</b>
+     <b style="margin-left: 37em;">If u want to open the file?</b>
+    <form id="form" name="form" onsubmit="saveNote(event)">
+        <input type="button" value="B" name="name" onclick="document.execCommand('bold', false, null);" style="font-weight: bold;">
+
+        <input type="button" value="I" name="name" onclick="document.execCommand('italic', false, null);" style="font-style: italic;">
+
+        <input type="button" value="U" name="name" onclick="document.execCommand('underline', false, null);" style="text-decoration: underline;">
+        <input type="button" value="delete" name="name" onclick="document.execCommand('delete', false, null);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unique Id:
+        <input type="number" name="content_id" id="content_id" size="2" style="width:4em;">&nbsp; Save as:
+        <input type="Text" name="content_name" id="content_name">
+        <input type="submit" value='save' id="submit" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the Uniqueid:
+        <input type="Search" name="search" placeholder="Search..." onkeyup="searchNote()" />
+
+        <div contenteditable="true" id="content" name="content" style="height: 700px; width: 90%;border: 1px solid black"></div>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>  
