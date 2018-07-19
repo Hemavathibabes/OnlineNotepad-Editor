@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Text editor</title>
+	
+</head>
+<body onload="loaduserid2()">
+<b>if u want to open the file?</b>
+<input id="search-box" type="search" placeholder="Enter the id or filename.." onkeyup="searchNote(this.value)" /><br><br>
+<b><u>Saved Notes:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Userid:</b>
+<input type="button" name="" id="u_id">
+  
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Id</th>
+            <th>File name</th>
+            <th>content</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% rows.forEach((row,ind) => { %>
+     <tr>
+         <td><%- ind +1 %>
+         </td>   
+         <td><%- row.id %></td>
+         <td><%- row.filename%></td>
+         <td><%- row.info %></td>
+         <td>
+             <button>
+                 <a href="/edit/<%- row.id %>">Edit</a>
+             </button>
+         </td>
+         <td>
+             <button onclick="DeleteNote(<%- row.id %>,this)">Delete</button>
+         </td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+ <script src="js/script.js" ></script>
+ <script src="js/ajax.js"></script>
+</body>
+
+</html>
